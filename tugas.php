@@ -1,3 +1,18 @@
+<?php 
+    function kelilingLingkaran (int $angka){
+        $phi = 3.14;
+        $radius = $angka / 5;
+
+        return 2 * $phi * $radius;
+    }
+
+    function luasPersegi (int $angka){
+        $panjang = $angka / 3;
+        $lebar = $angka / 5;
+
+        return $panjang * $lebar;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
