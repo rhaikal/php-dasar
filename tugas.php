@@ -1,9 +1,16 @@
 <?php 
+define("phi", 3.14);
+    
     function kelilingLingkaran (int $angka){
-        $phi = 3.14;
         $radius = $angka / 5;
 
-        return 2 * $phi * $radius;
+        return 2 * phi * $radius;
+    }
+
+    function luasLingkaran (int $angka){
+        $radius = $angka / 3;
+
+        return phi * ($radius * $radius);
     }
 
     function luasPersegi (int $angka){
@@ -22,6 +29,16 @@
     <title>PHP Dasar - Tugas | Bootcamp Inosoft</title>
 </head>
 <body>
-    
+    <?php for($i = 1; $i <= 100; $i++) : ?>
+        <?php if($i % 3 == 0) : ?>
+            <?= number_format(luasLingkaran($i), 2, ".", "") ?> <br>
+        <?php elseif($i % 5 == 0) : ?>
+            <?= number_format(kelilingLingkaran($i), 2, ".", "") ?> <br>
+        <?php elseif($i % 5 == 0 && $i % 3 == 0) : ?>
+            <?= number_format(luasPersegi($i), 2, ".", "") ?> <br>
+        <?php else : ?>
+            <?= number_format($i, 2, ".", "") ?> <br>
+        <?php endif; ?>
+    <?php endfor; ?>
 </body>
 </html>
