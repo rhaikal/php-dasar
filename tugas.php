@@ -30,12 +30,12 @@ define("phi", 3.14);
 </head>
 <body>
     <?php for($i = 1; $i <= 100; $i++) : ?>
-        <?php if($i % 3 == 0) : ?>
+        <?php if($i % 5 == 0 && $i % 3 == 0) : ?>
+            <?= number_format(luasPersegi($i), 2, ".", "") ?> <br>
+        <?php elseif($i % 3 == 0) : ?>
             <?= number_format(luasLingkaran($i), 2, ".", "") ?> <br>
         <?php elseif($i % 5 == 0) : ?>
             <?= number_format(kelilingLingkaran($i), 2, ".", "") ?> <br>
-        <?php elseif($i % 5 == 0 && $i % 3 == 0) : ?>
-            <?= number_format(luasPersegi($i), 2, ".", "") ?> <br>
         <?php else : ?>
             <?= number_format($i, 2, ".", "") ?> <br>
         <?php endif; ?>
